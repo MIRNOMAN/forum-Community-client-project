@@ -1,13 +1,23 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Container from "./Container";
 import logo from "../../assets/logo.png"
+import useAuth from "../../hooks/useAuth";
 
 
 const Navbar = () => {
+    const { user,logOut } = useAuth();
+
+    const handleLogedOut = () => {
+        logOut()
+          .then(() => { })
+          .catch(error => console.log(error));
+      }
     const navlinks = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/menbership">Membership</NavLink></li>
-        <li><NavLink to="/joinus">Join US</NavLink></li>
+        {/* <li><NavLink to="/joinus">Join US</NavLink></li>
+        <li><NavLink to="/login">Login</NavLink></li> */}
+        {user ? <li></li> : <li><NavLink to="/joinus">Join US</NavLink></li>}
     </>
     return (
         <Container>
@@ -53,18 +63,18 @@ const Navbar = () => {
                         <div className="dropdown dropdown-end">
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
-                                    <img alt="Tailwind CSS Navbar component" src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                    <img alt="Tailwind CSS Navbar component" src={user?.photoURL} />
                                 </div>
                             </label>
-                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                            <ul tabIndex={0} className="menu menu-sm text-center space-y-2 dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                                 <li>
-                                    <a className="justify-between">
-                                        Profile
-                                        <span className="badge">New</span>
-                                    </a>
+                                    {user?.displayName}
                                 </li>
-                                <li><a>Dashboard</a></li>
-                                <li><a>Logout</a></li>
+                                <li>Dashboard</li>
+                                {
+                                    user ?  <li><button onClick={handleLogedOut}>LogOut</button></li> :
+                                        <li><Link to='/login'>Login</Link></li> 
+                                }
                             </ul>
                         </div>
                     </div>
