@@ -8,17 +8,17 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 const Banner = () => {
     return (
-        <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/D4GY52J/Untitled-design-21-1.png)' }}>
+        <div className="md:hero md:min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/D4GY52J/Untitled-design-21-1.png)' }}>
             <Container>
-                <div className="flex gap-5 mt-10 justify-center items-center ">
-                    <div className="w-1/2" data-aos="fade-right"
+                <div className="md:flex gap-5 mt-10 justify-center items-center ">
+                    <div className="md:w-1/2" data-aos="fade-right"
                         data-aos-duration="3000">
-                        <h1 className="mb-5 text-5xl font-bold text-white">Civilized discussion for your community</h1>
+                        <h1 className="mb-5 text-5xl font-bold text-white Playfair">Civilized discussion for your community</h1>
                         <p className="mb-5 text-white">Join our vibrant online community dedicated to fostering meaningful discussions, sharing knowledge, and connecting with like-minded individuals. </p>
                         <button type="button" className="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Explore More</button>
 
                     </div>
-                    <div className="w-1/2">
+                    <div className="md:w-1/2 w-full">
                         <div className="">
                             <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
                                 <SwiperSlide>

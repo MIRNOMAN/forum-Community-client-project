@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "tagName": "#Programming"
+    },
+    {
+      "id": 2,
+      "tagName": "#WebDevelopment"
+    },
+    {
+      "id": 3,
+      "tagName": "#GraphicDesign"
+    },
+    {
+      "id": 4,
+      "tagName": "#DataScience"
+    },
+    {
+      "id": 5,
+      "tagName": "#Gaming"
+    },
+    {
+      "id": 6,
+      "tagName": "#HealthandFitness"
+    },
+    {
+      "id": 7,
+      "tagName": "#Travel"
+    },
+    {
+      "id": 8,
+      "tagName": "#Cooking"
+    },
+    {
+      "id": 9,
+      "tagName": "#Music"
+    },
+    {
+      "id": 10,
+      "tagName": "#FilmandTV"
+    },
+    {
+      "id": 11,
+      "tagName": "#BookClub"
+    },
+    {
+      "id": 12,
+      "tagName": "#Photography"
+    },
+    {
+      "id": 13,
+      "tagName": "#ArtificialIntelligence"
+    },
+    {
+      "id": 14,
+      "tagName": "#VirtualReality"
+    },
+    {
+      "id": 15,
+      "tagName": "#Entrepreneurship"
+    },
+    {
+      "id": 16,
+      "tagName": "#Fashion"
+    },
+    {
+      "id": 17,
+      "tagName": "#ScienceandTechnology"
+    },
+    {
+      "id": 18,
+      "tagName": "#Parenting"
+    },
+    {
+      "id": 19,
+      "tagName": "#FitnessChallenges"
+    },
+    {
+      "id": 20,
+      "tagName": "#DIYProjects"
+    }
+  ]
+  
