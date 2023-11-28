@@ -78,12 +78,13 @@ const from = location.state?.from?.pathname || "/";
             console.log(result);
             navigate('/')
            })
+        navigate('/')
         })
      }
     return (
         <div>
            <Helmet>
-                <title>Bistro Boss | Login</title>
+                <title>Forum-Community | Login</title>
             </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content  md:flex">

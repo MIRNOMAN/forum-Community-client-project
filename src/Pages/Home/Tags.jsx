@@ -12,13 +12,12 @@ const Tags = () => {
         .then(res => res.json())
         .then(data => setTags(data))
     },[])
-    console.log(tags);
     return (
         <div>
             <SectionTitle heading={'Different type of  Community'} subHeading={'Tags Name'}></SectionTitle>
             <div className="flex flex-wrap gap-2 ml-7">
                {
-                tags?.map(tag => <TagCard key={tag.id} tag={tag}></TagCard>)
+                tags && tags?.map(tag => <TagCard key={tag.id} tag={tag}></TagCard>)
                }
             </div>
         </div>

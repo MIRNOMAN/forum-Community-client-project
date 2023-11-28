@@ -14,14 +14,14 @@ const Navbar = () => {
       }
     const navlinks = <>
         <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/menbership">Membership</NavLink></li>
+        <li><NavLink to="/membership">Membership</NavLink></li>
         {/* <li><NavLink to="/joinus">Join US</NavLink></li>
         <li><NavLink to="/login">Login</NavLink></li> */}
-        {user ? <li></li> : <li><NavLink to="/joinus">Join US</NavLink></li>}
+        {user ? <li></li> : <li><NavLink to="/login">Join US</NavLink></li>}
     </>
     return (
         <Container>
-            <div className="navbar bg-base-100">
+            <div className="navbar  bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -41,7 +41,7 @@ const Navbar = () => {
                         {navlinks}
                     </ul>
                 </div>
-                <div className="navbar-end">
+                <div className="navbar-end ">
                     <div className="flex justify-center items-center">
                         <div className="dropdown dropdown-end">
                             <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -70,7 +70,7 @@ const Navbar = () => {
                                 <li>
                                     {user?.displayName}
                                 </li>
-                                <li>Dashboard</li>
+                                {user && <Link to="/dashboard"><li><button>Dashboard</button></li></Link>}
                                 {
                                     user ?  <li><button onClick={handleLogedOut}>LogOut</button></li> :
                                         <li><Link to='/login'>Login</Link></li> 

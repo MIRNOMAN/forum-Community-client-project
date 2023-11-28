@@ -23,7 +23,8 @@ const Register = () => {
                 const userInfo = {
                     name : data?.name,
                     email: data?.email,
-
+                    reward : 'Bronze Badge',
+                    subscription: 'Membership'
                 }
                 axiosPublic.post('/users', userInfo)
                 .then(res => {
@@ -51,6 +52,8 @@ const Register = () => {
             const userInfo = {
                 email: result.user?.email,
                 name: result.user?.displayName,
+                reward : 'Bronze Badge',
+                subscription: 'Membership'
                }
                axiosPublic.post('/users', userInfo)
                .then(result => {
