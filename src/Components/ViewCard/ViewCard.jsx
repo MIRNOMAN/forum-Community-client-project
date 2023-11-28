@@ -20,7 +20,7 @@ const ViewCard = () => {
 
 
 
-const {data = {}, refetch,isFetching } = useQuery({
+const {data = {}, refetch } = useQuery({
     queryKey: ['details', _id],
     queryFn: async () => {
         const res = await axiosPublic.get(`/details/${_id}`)
@@ -37,13 +37,12 @@ const {data = {}, refetch,isFetching } = useQuery({
 
         const commentInfo = {
             newComments: comment,
+            userId: _id,
             email : author_email,
         }
        
       const res = await axiosPublic.post('/comments', commentInfo)
-      
-        
-    
+     
     }
     
     
@@ -68,6 +67,15 @@ const {data = {}, refetch,isFetching } = useQuery({
    
    }
 
+   const handleCommentButton = () =>{
+    const latestComment = data.comments + 1;
+    console.log(latestComment)
+    axiosPublic.patch('/posts', {latestComment, usersId: _id})
+    .then(res =>{
+        refetch();
+    })
+   }
+
     return (
         <div className="flex mx-auto" >
             <Container>
@@ -86,9 +94,9 @@ const {data = {}, refetch,isFetching } = useQuery({
                         </div>
                         <p className="text-sm mt-2 text-[#706F6F]">vote: {votes}</p>
                         <hr className="mt-5" />
-                        <form onSubmit={handleComment}>
+                        <form  onSubmit={handleComment}>
                         <textarea className="textarea w-full" name="textArea" placeholder="Comment here....."></textarea>
-                        <input type="submit" className="btn btn-sm w-full mt-1" value="Add Comment" />
+                        <input onClick={handleCommentButton} type="submit" className="btn btn-sm w-full mt-1" value="Add Comment" />
                         </form>
                         <div className="mt-5 space-x-9">
                             <button onClick={handleUpvotes} className="btn btn-circle"><FaArrowUp></FaArrowUp></button>

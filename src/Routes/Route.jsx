@@ -14,6 +14,7 @@ import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import UserProfile from "../Pages/Dashboard/UserProfile/UserProfile";
 import CommentCollection from "../Components/CommentCollection/CommentCollection";
 import AdminProfile from "../Pages/Dashboard/AdminProfile/AdminProfile";
+import AdminAnnouncement from "../Pages/Dashboard/AdminAnnouncement/AdminAnnouncement";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -74,6 +75,9 @@ const router = createBrowserRouter([
       {
         path: 'users',
         element: <AllUsers></AllUsers>
+      },{
+        path: 'announcement',
+        element: <AdminAnnouncement></AdminAnnouncement>
       }
     ]
   }

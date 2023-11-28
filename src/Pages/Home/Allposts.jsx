@@ -8,7 +8,7 @@ import { useState } from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 
-const Allposts = ({comments}) => {
+const Allposts = () => {
     const [itemPerPage, setItemPerPage] = useState(5);
     const [currentPage, setCurrentPage] = useState(0);
     const [asc, setAsc] = useState(true)
@@ -64,7 +64,7 @@ const Allposts = ({comments}) => {
              <button onClick={() => setAsc(!asc)} className="btn mb-6 btn-accent text-white text-lg">Popularity</button>
            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
            {
-               isLoading ? <p>Loading...</p> : posts.map((post) => <AllPostCard key={post._id} comments={comments} post={post}></AllPostCard>)
+               isLoading ? <p>Loading...</p> : posts.map((post) => <AllPostCard key={post._id}  post={post}></AllPostCard>)
             }
            </div>
           <div className="pagination">

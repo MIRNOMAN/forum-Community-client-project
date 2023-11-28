@@ -1,15 +1,13 @@
 import { FaComment, FaTrashAlt } from "react-icons/fa";
 import usePosts from "../../../hooks/usePosts";
 import { Link, } from "react-router-dom";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 
 
 const UserPosts = () => {
-    const [dataposts,refetch,postPanding] = usePosts();
-    const axiosSecure = useAxiosSecure();
+    const [dataposts,refetch] = usePosts();
     const axiosPublic = useAxiosPublic();
 
 
@@ -63,7 +61,7 @@ const UserPosts = () => {
                                     <th>{index + 1}</th>
                                     <td>{user.title}</td>
                                     <td>{user.votes}</td>
-                                    <td> {postPanding ? <div>Loading....</div> : <Link to={`/comments/${user._id}`}><button className="btn btn-ghost bg-[#8DC643] text-white"><FaComment></FaComment></button></Link>}</td>
+                                    <td> <Link to={`/comments/${user._id}`}><button className="btn btn-ghost bg-[#8DC643] text-white"><FaComment></FaComment></button></Link></td>
                                     <td><button onClick={() => handleDelete(user)}  className="btn btn-ghost bg-red-500 text-white"><FaTrashAlt></FaTrashAlt></button></td>
                                     
                                 </tr>

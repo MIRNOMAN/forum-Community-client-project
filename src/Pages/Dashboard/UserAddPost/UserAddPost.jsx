@@ -50,7 +50,7 @@ const UserAddPost = () => {
                 image: res.data.data.display_url,
                 upVotes: 0,
                 downVotes: 0,
-                time: new Date().getTime(),
+                time: new Date().toLocaleTimeString(),
                 votes: 0,
                 comments: 0,
             }

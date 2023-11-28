@@ -55,7 +55,7 @@ console.log()
                             <p className="text-xs">{item.time}</p>
                             <div className="flex gap-8 mt-2 text-sm">
                                 <p>Vote : <span className="font-bold ml-2" >{item.votes}</span></p>
-                                <p>comments : <span className="font-bold ml-2">{ item.comments.result}</span></p>
+                                <p>comments : <span className="font-bold ml-2">{ item.comments}</span></p>
                             </div>
                         </div>
                     </div>
