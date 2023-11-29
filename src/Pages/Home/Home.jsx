@@ -4,16 +4,17 @@ import Allposts from "./Allposts";
 import Banner from "./Banner";
 import Tags from "./Tags";
 import Announcement from "./Announcement/Announcement"
+import { useState } from "react";
 
 
 
 
 const Home = () => {
-
+  const [search, setSearch] = useState('');
     return (
         <div>
 
-            <Banner></Banner>
+            <Banner setSearch={setSearch}></Banner>
 
             <Container>
               {/* all tags */}
@@ -24,7 +25,7 @@ const Home = () => {
 
              {/* all posts here */}
 
-             <Allposts ></Allposts>
+             <Allposts search={search}></Allposts>
 
             </Container>
         </div>

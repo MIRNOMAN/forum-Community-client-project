@@ -28,20 +28,21 @@ console.log()
     return (
        <div>
         {userData && <div>
-            <div className="bg-[#F2F2F2] p-7 md:min-h-screen">
+            <div className="bg-[#F2F2F2] md:p-7 md:min-h-screen">
             <div className="text-center">
                 <h1 className="md:text-4xl font-extrabold Playfair">User profile</h1>
-                <hr className="w-48 h-1 mx-auto my-4  bg-gray-100 border-0 rounded md:my-3 dark:bg-gray-700" />
+                <hr className="md:w-48 h-1 mx-auto my-4  bg-gray-100 border-0 rounded md:my-3 dark:bg-gray-700" />
             </div>
 
-            <div className="mt-10">
-                <div className="bg-[#FFFFFF] mx-10 h-[200px] pt-[60px] rounded-xl relative ">
-                    <h1 className="md:text-2xl text-center font-bold Playfair">{user?.displayName}</h1>
+            <div className="md:mt-10">
+                <div className="bg-[#FFFFFF] md:mx-10 md:h-[200px] h-[100px] md:pt-[60px] rounded-xl relative ">
+                    <h1 className="md:text-2xl text-center md:font-bold Playfair">{user?.displayName}</h1>
                     <h6 className="md:text-lg text-xs text-center text-[#DFE0E2] ">{user?.email}</h6>
-                    <h1 className="flex text-2xl justify-center items-center font-semibold">Badges : <span className="flex ml-4 items-center text-xl">Bronze <FaAward></FaAward></span></h1>
+                    <h1 className="flex md:text-2xl justify-center items-center font-semibold">Badges : <span className="flex ml-4 items-center md:text-xl">Bronze <FaAward></FaAward></span></h1>
+                    <h1 className="flex md:text-2xl justify-center items-center font-semibold">Badges : <span className="flex ml-4 items-center md:text-xl">Gold <FaAward></FaAward></span></h1>
                 </div>
                 <div className="">
-                    <img className="rounded-full h-16 w-16  md:h-24 md:w-24 top-[120px] border-8 border-[#F2F2F2] md:ml-[27%] ml-[37%] absolute" src={user?.photoURL} alt="" />
+                    <img className="rounded-full h-16 w-16  md:h-24 md:w-24 md:top-[120px] border-8 border-[#F2F2F2] md:ml-[27%] ml-[37%] absolute" src={user?.photoURL} alt="" />
                 </div>
             </div>
             <div className="grid grid-cols-1 mt-10 md:grid-cols-3 gap-4">

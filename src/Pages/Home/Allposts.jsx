@@ -8,7 +8,7 @@ import { useState } from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 
-const Allposts = () => {
+const Allposts = ({search}) => {
     const [itemPerPage, setItemPerPage] = useState(5);
     const [currentPage, setCurrentPage] = useState(0);
     const [asc, setAsc] = useState(true)
@@ -17,7 +17,7 @@ const Allposts = () => {
     const pages = [...Array(numberOfPages).keys()];
     const axiosSecure = useAxiosSecure();
     // useEffect(() =>{
-    //     axios.get(`http://localhost:5000/posts?page=${currentPage}&size=${itemPerPage}&sort=${asc ? 'asc' : 'desc'}`)
+    //     axios.get(`https://forum-community-server-project.vercel.app/posts?page=${currentPage}&size=${itemPerPage}&sort=${asc ? 'asc' : 'desc'}`)
     //     .then(res => {
     //         setPosts(res.data)
     //         // const remaining = posts?.filter(cof => cof._id !== posts._id)
@@ -27,12 +27,13 @@ const Allposts = () => {
     // },[currentPage, itemPerPage,asc,posts])
 
     const {data: posts =[], isLoading,isError,error } = useQuery({
-        queryKey: ['posts',currentPage,itemPerPage,asc],
+        queryKey: ['posts',currentPage,itemPerPage,asc,search],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/posts?page=${currentPage}&size=${itemPerPage}&sort=${asc ? 'asc' : 'desc'}`);
+            const res = await axiosSecure.get(`/posts?page=${currentPage}&size=${itemPerPage}&sort=${asc ? 'asc' : 'desc'}&search=${search}`);
             return res.data;
         }
     })
+   
     console.log(posts);
     const handleItemPerPage = (e) => {
     const value = parseInt(e.target.value)

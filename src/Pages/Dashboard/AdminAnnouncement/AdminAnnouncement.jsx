@@ -47,7 +47,7 @@ const AdminAnnouncement = () => {
 }
     return (
         <div>
-            <div className="bg-slate-100 p-16">
+            <div className="bg-slate-100 md:p-16">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         
                             <div className="w-full">

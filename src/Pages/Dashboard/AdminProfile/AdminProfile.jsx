@@ -66,9 +66,9 @@ const AdminProfile = () => {
 
                     <div className="mt-8 md:flex items-center gap-8">
                         <div className="md:w-1/2">
-                            <h1 className="  text-lg">Number of Posts : {usersall}</h1>
-                            <h1 className=" py-2 text-lg">Number of Comments : {posts}</h1>
-                            <h1 className=" text-lg">Number of Users : {allcomments}</h1>
+                            <h1 className="  text-lg">Number of Posts : {posts}</h1>
+                            <h1 className=" py-2 text-lg">Number of Comments : {allcomments}</h1>
+                            <h1 className=" text-lg">Number of Users : {usersall}</h1>
                         </div>
                         <div className="md:w-1/2">
                             <PieChart width={400} height={400}>

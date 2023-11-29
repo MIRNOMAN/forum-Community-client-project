@@ -7,7 +7,7 @@ import useAuth from "./useAuth";
 
 
 export const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://forum-community-server-project.vercel.app'
 })
 
 

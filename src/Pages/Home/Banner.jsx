@@ -6,7 +6,31 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import { Pagination } from 'swiper/modules';
-const Banner = () => {
+
+const Banner = ({setSearch}) => {
+ 
+   
+    // const axiosSecure = useAxiosSecure();
+
+    // useEffect(() => {
+    //  if(search){
+    //     console.log(search);
+    //     axiosSecure.get(`/postsearch?search=${search}`)
+    //     .then(res => setSearchValue(res.data))
+    //  }
+    // },[search])
+    
+
+    const handleSearch = (e) =>{
+      e.preventDefault();
+
+      const searchText = e.target.search.value;
+
+      setSearch(searchText)
+    
+
+    }
+
     return (
         <div className="md:hero md:min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/D4GY52J/Untitled-design-21-1.png)' }}>
             <Container>
@@ -36,7 +60,7 @@ const Banner = () => {
                     </div>
                 </div>
                 <div>
-                    <form className="mt-20">
+                    <form onSubmit={handleSearch} className="md:mt-20 pb-5">
                         <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                         <div className="relative">
                             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -44,8 +68,8 @@ const Banner = () => {
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                                 </svg>
                             </div>
-                            <input type="text" className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Category...." />
-                            <button type="submit" className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Search</button>
+                            <input type="text" name="search" className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Category...." />
+                            <input  type="submit" value="Search" className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" ></input>
                         </div>
                     </form>
                 </div>

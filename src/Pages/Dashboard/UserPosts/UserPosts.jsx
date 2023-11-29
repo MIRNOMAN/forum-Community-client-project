@@ -42,10 +42,10 @@ const UserPosts = () => {
         <div>
             <h1>totall user : {dataposts.length}</h1>
             <div className="overflow-x-auto">
-                <table className="table w-full">
+                <table className="table table-xs   md:w-full">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr >
                             <th></th>
                             <th>Post Title</th>
                             <th>Number of votes</th>

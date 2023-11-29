@@ -29,7 +29,7 @@ const {data = {}, refetch } = useQuery({
     }
 })
    console.log(data);
-    const { author_name,author_email, image, title,votes, time, tagName, description } = data;
+    const { author_name,author_email, image,comments, title,votes, time, tagName, description } = data;
 
     const handleComment = async(e) =>{
         e.preventDefault();
@@ -39,6 +39,8 @@ const {data = {}, refetch } = useQuery({
             newComments: comment,
             userId: _id,
             email : author_email,
+            title: title,
+            comment : comments + 1,
         }
        
       const res = await axiosPublic.post('/comments', commentInfo)
@@ -67,14 +69,7 @@ const {data = {}, refetch } = useQuery({
    
    }
 
-   const handleCommentButton = () =>{
-    const latestComment = data.comments + 1;
-    console.log(latestComment)
-    axiosPublic.patch('/posts', {latestComment, usersId: _id})
-    .then(res =>{
-        refetch();
-    })
-   }
+
 
     return (
         <div className="flex mx-auto" >
@@ -96,12 +91,12 @@ const {data = {}, refetch } = useQuery({
                         <hr className="mt-5" />
                         <form  onSubmit={handleComment}>
                         <textarea className="textarea w-full" name="textArea" placeholder="Comment here....."></textarea>
-                        <input onClick={handleCommentButton} type="submit" className="btn btn-sm w-full mt-1" value="Add Comment" />
+                        <input  type="submit" className="btn btn-sm w-full mt-1" value="Add Comment" />
                         </form>
                         <div className="mt-5 space-x-9">
                             <button onClick={handleUpvotes} className="btn btn-circle"><FaArrowUp></FaArrowUp></button>
                             <button onClick={handleDownVotes} className="btn btn-circle"><FaArrowDown></FaArrowDown></button>
-                            <FacebookShareButton url={`http://localhost:5000/details/${_id}`}>
+                            <FacebookShareButton url={`https://forum-community-server-project.vercel.app/details/${_id}`}>
                             <button className="btn btn-circle"><FaShare></FaShare></button>
                             </FacebookShareButton>
                         </div>

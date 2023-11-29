@@ -79,20 +79,20 @@ const UserAddPost = () => {
     return (
         <div>
             {postCount <= 5 ? (
-                <div className="bg-slate-100 p-16">
+                <div className="bg-slate-100 md:p-16">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="md:flex">
-                            <div className="w-1/2">
+                            <div className="md:w-1/2">
                                 <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Author Name*</label>
                                 <input type="text" {...register("name")} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type here" required />
                             </div>
-                            <div className="w-1/2 ml-4">
+                            <div className="md:w-1/2  md:ml-4">
                                 <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Author Email*</label>
                                 <input type="email" {...register("email")} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type here" required />
                             </div>
                         </div>
                         <div className="md:flex mt-7">
-                            <div className="w-1/2">
+                            <div className="md:w-1/2">
                                 <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tag*</label>
                                 <select {...register("tagCatagory")} className="select select-bordered w-full ">
                                     <option disabled selected>Select a tag</option>
@@ -104,7 +104,7 @@ const UserAddPost = () => {
 
                                 </select>
                             </div>
-                            <div className="w-1/2 ml-4">
+                            <div className="md:w-1/2 md:ml-4">
                                 <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title*</label>
                                 <input type="text" {...register("title")} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type here.." required />
                             </div>

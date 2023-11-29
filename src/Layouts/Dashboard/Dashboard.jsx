@@ -7,8 +7,8 @@ const Dashboard = () => {
     const [isAdmin] = useAdmin();
    
     return (
-        <div className="flex mx-10">
-            <div className="w-64 min-h-screen bg-[#8DC643]">
+        <div className="flex md:mx-10">
+            <div className="md:w-64 md:min-h-screen bg-[#8DC643]">
                 <ul className="menu p-3">
 
                     {
@@ -44,7 +44,7 @@ const Dashboard = () => {
                 </ul>
 
             </div>
-            <div className="flex-1 p-10">
+            <div className="flex-1 md:p-10">
                 <Outlet></Outlet>
             </div>
         </div>

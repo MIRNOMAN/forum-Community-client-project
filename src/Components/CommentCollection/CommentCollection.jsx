@@ -24,7 +24,7 @@ const CommentCollection = () => {
         }
     })
     console.log(data)
-
+   
 
     const handleChangeValue = async (e) =>{ 
         e.preventDefault();
@@ -35,7 +35,7 @@ const CommentCollection = () => {
         console.log(res);
     }
     const handleReporValue = () =>{
-        setFeedback(true)
+        setFeedback(false)
     }
   
     return (
@@ -47,7 +47,7 @@ const CommentCollection = () => {
                     </div> : <div className="mt-5">
                         <h1>Totall Comments : {data.length}</h1>
                         <div className="mt-5">
-                            <table className="table w-1/5 md:w-full">
+                            <table className="table table-xs w-1/5 md:w-full">
                                 {/* head */}
                                 <thead>
                                     <tr>
@@ -80,7 +80,7 @@ const CommentCollection = () => {
                                         
                                                       </select>
                                                 </td>
-                                                <td>{feedback ? <button onClick={handleReporValue} className="btn btn-ghost bg-red-500 text-white">Report</button> : <button disabled className="btn btn-ghost bg-red-500 text-white">Report</button>}</td>
+                                                <td>{feedback ? <button onClick={() =>handleReporValue(user._id)} className="btn btn-ghost bg-red-500 text-white">Report</button> : <button disabled className="btn btn-ghost bg-red-500 text-white">Report</button>}</td>
 
                                             </tr>
                                         )

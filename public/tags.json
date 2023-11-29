@@ -1,83 +1,83 @@
 [
     {
       "id": 1,
-      "tagName": "#Programming"
+      "tagName": "Programming"
     },
     {
       "id": 2,
-      "tagName": "#WebDevelopment"
+      "tagName": "WebDevelopment"
     },
     {
       "id": 3,
-      "tagName": "#GraphicDesign"
+      "tagName": "GraphicDesign"
     },
     {
       "id": 4,
-      "tagName": "#DataScience"
+      "tagName": "DataScience"
     },
     {
       "id": 5,
-      "tagName": "#Gaming"
+      "tagName": "Gaming"
     },
     {
       "id": 6,
-      "tagName": "#HealthandFitness"
+      "tagName": "HealthandFitness"
     },
     {
       "id": 7,
-      "tagName": "#Travel"
+      "tagName": "Travel"
     },
     {
       "id": 8,
-      "tagName": "#Cooking"
+      "tagName": "Cooking"
     },
     {
       "id": 9,
-      "tagName": "#Music"
+      "tagName": "Music"
     },
     {
       "id": 10,
-      "tagName": "#FilmandTV"
+      "tagName": "FilmandTV"
     },
     {
       "id": 11,
-      "tagName": "#BookClub"
+      "tagName": "BookClub"
     },
     {
       "id": 12,
-      "tagName": "#Photography"
+      "tagName": "Photography"
     },
     {
       "id": 13,
-      "tagName": "#ArtificialIntelligence"
+      "tagName": "ArtificialIntelligence"
     },
     {
       "id": 14,
-      "tagName": "#VirtualReality"
+      "tagName": "VirtualReality"
     },
     {
       "id": 15,
-      "tagName": "#Entrepreneurship"
+      "tagName": "Entrepreneurship"
     },
     {
       "id": 16,
-      "tagName": "#Fashion"
+      "tagName": "Fashion"
     },
     {
       "id": 17,
-      "tagName": "#ScienceandTechnology"
+      "tagName": "ScienceandTechnology"
     },
     {
       "id": 18,
-      "tagName": "#Parenting"
+      "tagName": "Parenting"
     },
     {
       "id": 19,
-      "tagName": "#FitnessChallenges"
+      "tagName": "FitnessChallenges"
     },
     {
       "id": 20,
-      "tagName": "#DIYProjects"
+      "tagName": "DIYProjects"
     }
   ]
   

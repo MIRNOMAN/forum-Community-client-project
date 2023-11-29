@@ -15,6 +15,8 @@ import UserProfile from "../Pages/Dashboard/UserProfile/UserProfile";
 import CommentCollection from "../Components/CommentCollection/CommentCollection";
 import AdminProfile from "../Pages/Dashboard/AdminProfile/AdminProfile";
 import AdminAnnouncement from "../Pages/Dashboard/AdminAnnouncement/AdminAnnouncement";
+import AdminReport from "../Pages/Dashboard/AdminReport/AdminReport";
+import AdminRoute from "../Routes/AdminRoute"
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,12 +26,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/postsCount')
+        loader: () => fetch('https://forum-community-server-project.vercel.app/postsCount')
       },
       {
         path: '/details/:_id',
         element: <ViewCard></ViewCard>,
-        loader: ({ params }) => fetch(`http://localhost:5000/details/${params._id}`)
+        loader: ({ params }) => fetch(`https://forum-community-server-project.vercel.app/details/${params._id}`)
       },
       {
         path: '/membership',
@@ -38,7 +40,7 @@ const router = createBrowserRouter([
       {
         path: '/comments/:_id',
         element: <CommentCollection></CommentCollection>,
-        loader: ({ params }) => fetch(`http://localhost:5000/comments/${params._id}`)
+        loader: ({ params }) => fetch(`https://forum-community-server-project.vercel.app/comments/${params._id}`)
       }
       
     ]
@@ -57,11 +59,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'userprofile',
-        element: <UserProfile></UserProfile>
+        element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
       },
       {
         path: 'addPost',
-        element: <UserAddPost></UserAddPost>
+        element: <PrivateRoute><UserAddPost></UserAddPost></PrivateRoute>
       },
       {
         path: 'posts',
@@ -70,14 +72,18 @@ const router = createBrowserRouter([
       // admin
       {
         path: 'adminProfile',
-        element: <AdminProfile></AdminProfile>
+        element: <AdminRoute><AdminProfile></AdminProfile></AdminRoute>
       },
       {
         path: 'users',
-        element: <AllUsers></AllUsers>
+        element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
       },{
         path: 'announcement',
-        element: <AdminAnnouncement></AdminAnnouncement>
+        element: <AdminRoute><AdminAnnouncement></AdminAnnouncement></AdminRoute>
+      },
+      {
+        path: 'reported',
+        element: <AdminRoute><AdminReport></AdminReport></AdminRoute>
       }
     ]
   }
